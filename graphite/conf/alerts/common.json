@@ -1,0 +1,18 @@
+{
+    "alerts": [
+        {
+            "name": "cpu", // use percent
+            "query": "servers.*.cpu.percent",
+            "interval": "10minute",
+            "format": "short",
+            "rules": ["warning: > 95.0", "critical: > 98.0"]
+        },
+        {
+            "name": "memory", // use percent
+            "query": "servers.*.memory.percent",
+            "interval": "10minute",
+            "format": "short",
+            "rules": ["warning: > 80.0", "critical: > 95.0"]
+        }
+    ]
+}

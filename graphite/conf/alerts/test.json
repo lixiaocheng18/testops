@@ -1,0 +1,12 @@
+{
+    "alerts": [
+        {
+            "name": "dead_region_servers",
+            "query": "servers.serv0.hbase_metrics.master.dead_region_servers",
+            "interval": "3minute",
+            "format": "short",
+            "rules": ["warning: > 0", "critical: > 0"],
+            "method": "last_value"
+        }
+    ]
+}

@@ -1,0 +1,55 @@
+// Graphite-beacon configuration file (default values)
+{
+    // Path to config file
+    "config": "../config/beacon.json",
+
+    // include config
+    "include": ["../conf/alerts/test.json"],
+
+    // Graphite server URL
+    "graphite_url": "http://10.10.1.120:8080",
+
+    // HTTP AUTH username
+    "auth_username": null,
+
+    // HTTP AUTH password
+    "auth_password": null,
+
+    // smtp
+    "smtp": {
+        "from": "alarm@morpx.com",
+        "to": ["lx.li@morpx.com"],
+        "host": "smtp.exmail.qq.com",
+        "port": 25,
+        "username": "alarm@morpx.com",
+        "password": "i<3morpx",
+        "use_tls": true
+    },
+
+    // Path to a pidfile
+    // "pidfile": "graphite.pid",
+
+    // Default query interval
+    // Can be redfined for each alert.
+    // [eg. 15second, 30minute, 2hour, 1day, 3month, 1year]
+    "interval": "10minute",
+
+    // Default loglevel
+    "logging": "info",
+
+    // Default method (average, last_value).
+    "method": "average",
+
+    // Default prefix (used for notifications)
+    "prefix": "[BEACON]",
+
+    // Default handlers (log, smtp, hipchat)
+    "critical_handlers": ["log", "smtp"],
+    "warning_handlers": ["log", "smtp"],
+    "normal_handlers": ["log", "smtp"],
+
+    "debug": true,
+
+    // Place your alerts here
+    "alerts": []
+}

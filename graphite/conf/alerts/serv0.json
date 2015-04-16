@@ -1,0 +1,26 @@
+{
+    "alerts": [
+        {
+            "name": "hbase_master",
+            "query": "servers.serv0.process.hbase_master.alive",
+            "interval": "3minute",
+            "format": "short",
+            "rules": ["warning: < 1", "critical: < 1"],
+            "method": "last_value"
+        },{
+            "name": "hbase_thrift",
+            "query": "servers.serv0.hbasethrift.alive",
+            "interval": "3minute",
+            "format": "short",
+            "rules": ["warning: > 15000", "critical: > 60000"],
+            "method": "last_value"
+        },{
+            "name": "dead_region_servers",
+            "query": "servers.serv0.hbase_metrics.master.dead_region_servers",
+            "interval": "3minute",
+            "format": "short",
+            "rules": ["warning: > 0", "critical: > 0"],
+            "method": "last_value"
+        }
+    ]
+}

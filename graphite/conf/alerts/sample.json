@@ -1,0 +1,26 @@
+{
+    "alerts": [
+        {
+            "name": "chromium",
+            "query": "servers.morpx-lilx.process.VirtualBox.alive",
+            "interval": "3minute",
+            "format": "short",
+            "rules": ["warning: < 1", "critical: < 1"],
+            "method": "last_value"
+        },
+        {
+            "name": "cpu",
+            "query": "servers.*.cpu.cpu*.idle",
+            "interval": "10minute",
+            "format": "short",
+            "rules": ["warning: < 20.0", "critical: < 10.0"]
+        },
+        {
+            "name": "memory",
+            "query": "servers.*.memory.MemFree",
+            "interval": "10minute",
+            "format": "bytes",
+            "rules": ["warning: < 5000MB", "critical: < 20MB"]
+        }
+    ]
+}
